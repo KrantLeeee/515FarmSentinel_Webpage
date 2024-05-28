@@ -5,7 +5,8 @@ import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faCh
 import './Home.css';
 import { Link } from 'react-router-dom';
 import logo1 from '../assets/images/logo.jpg';
-import PeaweevilDetection from './PeaweevilDetection';
+import PeaweevilDetection from './PeaweevilDetection'; // Import PeaweevilDetection component
+import { getChatCompletion } from '../api/openai'; // Import getChatCompletion function
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -23,17 +24,21 @@ const Home = () => {
       const userMessage = { role: 'user', content: input.trim() };
       setMessages([...messages, userMessage]);
       setInput('');
-      setLoading(true);
-      setError(null);
+      setLoading(true); // Start loading
+      setError(null); // Clear previous errors
+
+      console.log('Sending message:', input.trim()); // Log the message being sent
 
       try {
         const botResponse = await getChatCompletion(input.trim());
-        const botMessage = { role: 'assistant', content: botResponse };
+        console.log('Received bot response:', botResponse); // Log the response from the bot
+        const botMessage = { role: 'assistant', content: botResponse.choices[0].text }; // Ensure to access the right property
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-        setLoading(false);
+        setLoading(false); // Stop loading
       } catch (error) {
+        console.error('Error sending message:', error);
         setError('Sorry, something went wrong.');
-        setLoading(false);
+        setLoading(false); // Stop loading
       }
     }
   };
@@ -66,7 +71,7 @@ const Home = () => {
         <section className="dashboard-section p-4">
           <h2 className="text-green-700 font-bold">Dashboard</h2>
           <div className="d-flex justify-content-between">
-            <PeaweevilDetection />
+            <PeaweevilDetection /> {/* Display PeaweevilDetection component */}
             <div className="device-list">
               <h3 className="font-bold text-green-700">My Device List</h3>
               <Link to="/dashboard" className="device-item d-flex justify-content-between align-items-center p-2 mt-2 shadow-sm rounded text-decoration-none">
