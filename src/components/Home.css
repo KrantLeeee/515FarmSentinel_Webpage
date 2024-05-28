@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    bbackground: linear-gradient(to top, #6D8C54, #F7C35F);
+    background: white;
     margin: 0;
     padding: 0;
   }
@@ -57,8 +57,22 @@ body {
   }
   
   .chart-section {
-    width: 65%;
+    flex: 4; /* 设置宽度比例为 4 */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
   }
+
+  .device-list {
+      flex: 1; /* 设置宽度比例为 1 */
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
   
   .device-item {
     transition: background-color 0.3s;

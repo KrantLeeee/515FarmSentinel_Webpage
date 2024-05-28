@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faChevronRight, faPlus, faCheckCircle, faCircle, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
-import './Dashboard2.css';
-import { getChatCompletion } from '../api/openai.js';
 import './Home.css';
-import { Link } from 'react-router-dom'; // 导入 Link 组件
+import { Link } from 'react-router-dom';
 import logo1 from '../assets/images/logo.jpg';
+import PeaweevilDetection from './PeaweevilDetection';
 
-const Dashboard2 = () => {
+const Home = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [error, setError] = useState(null);
@@ -24,21 +23,17 @@ const Dashboard2 = () => {
       const userMessage = { role: 'user', content: input.trim() };
       setMessages([...messages, userMessage]);
       setInput('');
-      setLoading(true); // Start loading
-      setError(null); // Clear previous errors
-
-      console.log('Sending message:', input.trim()); // Log the message being sent
+      setLoading(true);
+      setError(null);
 
       try {
         const botResponse = await getChatCompletion(input.trim());
-        console.log('Received bot response:', botResponse); // Log the response from the bot
         const botMessage = { role: 'assistant', content: botResponse };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
-        setLoading(false); // Stop loading
+        setLoading(false);
       } catch (error) {
-        console.error('Error sending message:', error);
         setError('Sorry, something went wrong.');
-        setLoading(false); // Stop loading
+        setLoading(false);
       }
     }
   };
@@ -58,7 +53,7 @@ const Dashboard2 = () => {
       <div className="main-content flex-1">
         <header className="header">
           <div className="d-flex align-items-center">
-          <img src={logo1} alt="Row 4" className="logo" />
+            <img src={logo1} alt="Row 4" className="logo" />
             <span className="font-bold text-lg ml-2">Farmbeats</span>
           </div>
           <h1 className="text-green-700 text-3xl font-bold">Sentinel</h1>
@@ -71,11 +66,7 @@ const Dashboard2 = () => {
         <section className="dashboard-section p-4">
           <h2 className="text-green-700 font-bold">Dashboard</h2>
           <div className="d-flex justify-content-between">
-            <div className="chart-section bg-white p-4 shadow rounded">
-              <h3 className="font-bold">Peaweevil Detection</h3>
-              <img src="images/img-7BKi7ExM9wxOINZ3nLM3UCdk.png" alt="Peaweevil Detection Graph" className="w-100" />
-              <button className="btn btn-outline-secondary mt-4">Switch to Weekly View</button>
-            </div>
+            <PeaweevilDetection />
             <div className="device-list">
               <h3 className="font-bold text-green-700">My Device List</h3>
               <Link to="/dashboard" className="device-item d-flex justify-content-between align-items-center p-2 mt-2 shadow-sm rounded text-decoration-none">
@@ -188,6 +179,4 @@ const Dashboard2 = () => {
   );
 };
 
-export default Dashboard2;
-
-
+export default Home;
