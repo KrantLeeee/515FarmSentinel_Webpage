@@ -5,5 +5,6 @@ export const fetchData = async (startDate, endDate) => {
       Timestamp: item.Timestamp,
       Weevil_number: item.Weevil_number,
       TS: item.TS
+      
   }));
 };

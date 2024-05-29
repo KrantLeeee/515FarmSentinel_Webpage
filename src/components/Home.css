@@ -45,7 +45,6 @@ body {
     flex-wrap: wrap;
   }
   
-  .chart-section,
   .device-list {
     width: 1000px;
     flex: 1;

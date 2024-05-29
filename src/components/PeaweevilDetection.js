@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../api/azure';
 import { Line } from 'react-chartjs-2';
+import { Chart, registerables } from 'chart.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
+// Register all necessary components, elements, and scales
+Chart.register(...registerables);
 
 const PeaweevilDetection = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -12,8 +16,12 @@ const PeaweevilDetection = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const result = await fetchData(startDate, endDate);
-      setData(result);
+      try {
+        const result = await fetchData(startDate, endDate);
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
     getData();
   }, [startDate, endDate]);
@@ -21,7 +29,7 @@ const PeaweevilDetection = () => {
   const groupData = (data, view) => {
     const groupedData = {};
     data.forEach(item => {
-      const date = new Date(item.TS);
+      const date = new Date(item.Timestamp);
       const key = view === 'monthly' ? `${date.getFullYear()}-${date.getMonth() + 1}` : date.toDateString();
       if (!groupedData[key]) {
         groupedData[key] = 0;
