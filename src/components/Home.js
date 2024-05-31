@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faChevronRight, faPlus, faCheckCircle, faCircle, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faChevronRight, faPlus, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
 import PeaweevilDetection from './PeaweevilDetection';
 import { getChatCompletion } from '../api/openai';
 import { Link } from 'react-router-dom';
