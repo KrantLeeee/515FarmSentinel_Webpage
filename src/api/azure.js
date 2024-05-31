@@ -1,6 +1,6 @@
 export const fetchData = async (startDate, endDate) => {
   console.log('Fetching data for dates:', startDate, endDate);
-  const response = await fetch(`http://farmsentinelflask.azurewebsites.net/api/data?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}`);
+  const response = await fetch(`https://farmsentinelflask.azurewebsites.net/api/data?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}`);
   const data = await response.json();
   console.log('Fetched data:', data); // 添加日志
   return data.map(item => ({
@@ -15,7 +15,7 @@ export const fetchData = async (startDate, endDate) => {
 
 export const captureNow = async () => {
   try {
-    const response = await fetch('http://farmsentinelflask.azurewebsites.net/api/capture', {
+    const response = await fetch('https://farmsentinelflask.azurewebsites.net/api/capture', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export const captureNow = async () => {
 export const updateWeevilNumber = async (rowKey, newWeevilNumber) => {
   console.log('Sending data:', { rowKey, newWeevilNumber });
   try {
-    const response = await fetch('http://farmsentinelflask.azurewebsites.net/api/update_peaweevil', {
+    const response = await fetch('https://farmsentinelflask.azurewebsites.net/api/update_peaweevil', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
