@@ -6,7 +6,6 @@ import PeaweevilDetection from './PeaweevilDetection';
 import { getChatCompletion } from '../api/openai';
 import { Link } from 'react-router-dom';
 import './Home.css';  // Ensure Home.css is imported
-import logo1 from '../assets/images/logo.jpg';
 
 const Home = () => {
   const [messages, setMessages] = useState([]);

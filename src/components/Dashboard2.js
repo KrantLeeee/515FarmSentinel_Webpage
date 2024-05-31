@@ -5,7 +5,7 @@ import { fetchData, captureNow, updateWeevilNumber } from '../api/azure';
 import { Link } from 'react-router-dom';
 import './Home.css';  // Ensure Home.css is imported
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faChevronRight, faPlus, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 function Dashboard2() {
