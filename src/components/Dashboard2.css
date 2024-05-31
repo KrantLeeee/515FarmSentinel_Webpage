@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to top, #6D8C54, #F7C35F);
+  background: white;
   height: 250vh;
 }
 
@@ -45,11 +45,11 @@ main {
 }
 
 .sidebar {
-  width: 350px;
-  background-color: #6D8C54;
+  width: 60px;
+  background-color: #f1f1f1;
   color: white;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 

@@ -61,7 +61,7 @@ const PeaweevilDetection = () => {
 
   return (
     <div className="chart-section">
-      <h3 className="font-bold">Peaweevil Detection</h3>
+      <h5 className="font-bold">Peaweevil Detection</h5>
       <div className="date-picker-container">
         <DatePicker
           selected={startDate}
