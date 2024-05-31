@@ -5,7 +5,7 @@ import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faCh
 import PeaweevilDetection from './PeaweevilDetection';
 import { getChatCompletion } from '../api/openai';
 import { Link } from 'react-router-dom';
-import './Home.css';  // 确保 Home.css 在最后被引入
+import './Home.css';  // Ensure Home.css is imported
 import logo1 from '../assets/images/logo.jpg';
 
 const Home = () => {
@@ -70,10 +70,13 @@ const Home = () => {
     <div className="dashboard-container">
       <header className="header fixed-top"> {/* Apply fixed position */}
         <div className="d-flex align-items-center">
-          <img src={logo1} alt="Row 4" className="logo" />
-          <span className="font-bold text-lg ml-2">Farmbeats</span>
+          <img src={require('../assets/images/microsoft.png')} alt="Row 4" className="logo" />
+          <span className="font-bold text-lg ml-2 text-white">Farmbeats</span>
         </div>
-        <h1 className="text-green-700 text-3xl font-bold">Sentinel</h1>
+        <div className="logo-container">
+          <img src={require('../assets/images/logo.jpg')} alt="Logo" className="logo" />
+          <h1 className="text-green-700 text-3xl font-bold text-white">Sentinel</h1>
+        </div>
         <div className="icon-white d-flex align-items-center">
           <FontAwesomeIcon icon={faEnvelope} className="text-green-700 text-xl mr-4 icon-margin" />
           <FontAwesomeIcon icon={faUserCircle} className="text-green-700 text-xl" />
@@ -94,9 +97,10 @@ const Home = () => {
         <div className="main-content">
           
           <div className="dashboard-content">
+            <h1 className="text-green-700 font-bold" style={{ fontFamily: 'Merriweather', color: '#6D8C54' }}>Dashboard</h1>
             <section className="dashboard-section">
               <div>
-                <h2 className="text-green-700 font-bold">Dashboard</h2>
+                
                 <div className="dashboard-svh d-flex justify-content-between">
                   
                   <PeaweevilDetection />

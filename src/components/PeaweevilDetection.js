@@ -50,10 +50,12 @@ const PeaweevilDetection = () => {
         {
           label: 'Peaweevil Count',
           data: values,
+          borderColor: '', // Set line color
+          borderWidth: 3, // Set line thickness
           fill: false,
           backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(75,192,192,1)',
-          borderWidth: 1
+          borderColor: '#F7C35F',
+          borderWidth: 3
         }
       ]
     };

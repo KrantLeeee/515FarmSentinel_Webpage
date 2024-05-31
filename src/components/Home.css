@@ -1,8 +1,12 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
   background: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+.header, .dashboard-section, .warning-section, .contact-section {
+  font-family: 'Merriweather', serif;
 }
 
 .dashboard-container {
@@ -12,9 +16,12 @@ body {
 }
 
 .header {
-  height: 80px;
+  background-image: url('../assets/images/header_background.png');
+  background-size: fit; /* 使背景图片覆盖整个header */
+  background-position: center; /* 使背景图片居中 */
+  height: 100px;
   background-color: #6D8C54;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
@@ -24,6 +31,12 @@ body {
 
 .header .logo {
   height: 40px;
+  margin-right: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .main-content {
@@ -35,7 +48,7 @@ body {
 
 .sidebar {
   position: fixed;
-  top: 80px;
+  top: 100px;
   left: 0;
   height: calc(100vh - 80px); /* Adjust the header's height accordingly */
   width: 60px;
@@ -45,7 +58,6 @@ body {
   align-items: center;
   padding-top: 20px;
 }
-
 
 .icon {
   font-size: 2em; /* Increase icon size to 3 times */
@@ -63,7 +75,7 @@ body {
 
 .dashboard-content {
   flex: auto;
-
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
 }
@@ -76,11 +88,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   background-color: #F1F1F1;
-  height: calc(60vh);
+  height: 70vh;
+}
+
+.dashboard-section-picture {
+  margin-top: 0px;
+  margin-right: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F1F1F1;
+  height: auto;
 }
 
 .dashboard-svh {
-height:80%;
+  height: 100%;
 }
 
 .chart-section {
@@ -90,7 +113,7 @@ height:80%;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
-  width:auto;
+  width: 70vw;
 }
 
 .device-list {
@@ -104,7 +127,7 @@ height:80%;
 
 .device-item {
   transition: background-color 0.3s;
-  width:auto;
+  width: auto;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -155,7 +178,9 @@ height:80%;
 }
 
 .contact-section {
-  background-color: #ffc107;
+  background-image: url('../assets/images/contact_us_bg.png');
+  background-size: fit; /* 使背景图片覆盖整个header */
+  background-position: center; /* 使背景图片居中 */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -255,4 +280,134 @@ height:80%;
 
 .chatbot-input button:hover {
   background-color: #2e8032;
+}
+
+.controls {
+  width: 200px;
+  background-color: #6D8C54;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.controls h3 {
+  color: white;
+}
+
+.controls input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #F7C35F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: #E0AC50;
+}
+
+.controls .biggerbutton {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #F7C35F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls .biggerbutton:hover {
+  background-color: #E0AC50;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+}
+
+.date-selector button {
+  background-color: #6D8C54;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.date-selector button:hover {
+  background-color: #E0AC50;
+}
+
+.date-picker {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  width: 150px;
+  text-align: center;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.picture img.testimage {
+  width: 450px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.picture-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.picture-time {
+  font-size: 14px;
+  color: #6D8C54;
+}
+
+.peaewevil-num {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.peaewevil-num button {
+  background-color: #F7C35F;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.peaewevil-num button:hover {
+  background-color: #E0AC50;
 }
