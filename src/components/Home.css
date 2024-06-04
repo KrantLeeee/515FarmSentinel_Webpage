@@ -17,8 +17,8 @@ body {
 
 .header {
   background-image: url('../assets/images/header_background.png');
-  background-size: fit; /* 使背景图片覆盖整个header */
-  background-position: center; /* 使背景图片居中 */
+  background-size: fit;
+  background-position: center;
   height: 100px;
   background-color: #6D8C54;
   padding: 10px 15px;
@@ -42,15 +42,15 @@ body {
 .main-content {
   display: flex;
   flex: 1;
-  margin-left: 40px; /* Adjust the margin to match the width of the sidebar */
-  margin-top: 40px; /* Adjust the margin to match the height of the header */
+  margin-left: 60px;
+  margin-top: 40px;
 }
 
 .sidebar {
   position: fixed;
   top: 100px;
   left: 0;
-  height: calc(100vh - 80px); /* Adjust the header's height accordingly */
+  height: calc(100vh - 100px);
   width: 60px;
   background-color: #f8f9fa;
   display: flex;
@@ -60,13 +60,12 @@ body {
 }
 
 .icon {
-  font-size: 2em; /* Increase icon size to 3 times */
-  color: #6D8C54; /* Change icon color */
+  font-size: 2em;
+  color: #6D8C54;
 }
 
 .icon-white {
-  font-size: 2em; 
-  color: white; /* Change icon color */
+  color: white;
 }
 
 .icon-margin {
@@ -92,18 +91,12 @@ body {
 }
 
 .dashboard-section-picture {
-  margin-top: 0px;
-  margin-right: 20px;
+  width: 80%;
   padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
   background-color: #F1F1F1;
-  height: auto;
-}
-
-.dashboard-svh {
-  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
 }
 
 .chart-section {
@@ -158,11 +151,11 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  background-color: #F1F1F1; /* Default background color */
+  background-color: #F1F1F1;
 }
 
 .warning-item:hover {
-  background-color: #F7C35F; /* Hover background color */
+  background-color: #F7C35F;
 }
 
 .warning-item .alert-circle {
@@ -179,8 +172,8 @@ body {
 
 .contact-section {
   background-image: url('../assets/images/contact_us_bg.png');
-  background-size: fit; /* 使背景图片覆盖整个header */
-  background-position: center; /* 使背景图片居中 */
+  background-size: fit;
+  background-position: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -283,11 +276,14 @@ body {
 }
 
 .controls {
-  width: 200px;
+  width: 20%;
+  padding: 25px;
   background-color: #6D8C54;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .controls h3 {
@@ -332,9 +328,26 @@ body {
   background-color: #E0AC50;
 }
 
+.clickbutton {
+  /* 在这里添加你的样式 */
+  background-color: #6D8C54;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 100px; /* 调整按钮高度 */
+}
+
+.clickbutton:hover {
+  background-color: #E0AC50;
+}
+
 .date-selector {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .date-selector button {
@@ -344,6 +357,7 @@ body {
   margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
+  height: 35px;
   transition: background-color 0.3s;
 }
 
@@ -360,14 +374,22 @@ body {
   text-align: center;
 }
 
+.react-datepicker-wrapper {
+  display: flexbox;
+  border: 0;
+  width: 150px;
+}
+
 .pictures {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .picture {
+  flex: 0 0 48%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: #e0e0e0;
   padding: 15px;
@@ -376,16 +398,17 @@ body {
 }
 
 .picture img.testimage {
-  width: 450px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-right: 20px;
 }
 
 .picture-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .picture-time {
@@ -410,4 +433,66 @@ body {
 
 .peaewevil-num button:hover {
   background-color: #E0AC50;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+  background-color: #dcf8c6;
+  border-radius: 15px 15px 0 15px;
+  font-family: 'Merriweather', serif;
+  padding: 10px;
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.message.user:hover {
+  background-color: #c8e6c9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.message.assistant {
+  justify-content: flex-start;
+  background-color: #f5e1a4;
+  border-radius: 15px 15px 15px 0;
+  font-family: 'Merriweather', serif;
+  padding: 10px;
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.message.assistant:hover {
+  background-color: #e8d095;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.message.user .message-content {
+  background-color: #dcf8c6;
+  color: #333;
+}
+
+.message.assistant .message-content {
+  background-color: #ececec;
+  color: #333;
+}
+
+.message-content:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.error-message, .loading-message {
+  padding: 10px;
+  color: red;
 }

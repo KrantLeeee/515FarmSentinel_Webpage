@@ -1,97 +1,95 @@
-# Getting Started with previous code
+# FarmBeats - Sentinel
+## Project Brief:
+Our system leverages Digital Signal Processing and Computer Vision for real-time pest detection and remote farm pest monitoring, saving time and labor for farmers.
 
-# Cuz I gitignored node_modules, so you need to download node_modules by below command
+## Technologies used in Web:
+1. Data visualization
+2. LLM powered Assistant
+3. Flask server
+4. Detailed use cases
+
+## Problem Scope:
+About 350 million acres of U.S. farmland are mostly managed by farmers over 65, and they're up against big challenges like pests, diseases, and not enough hands on deck. We've designed a cool, affordable IoT device that keeps an eye on farm health around the clock, spots problems like pests or diseases with smart tech, and syncs seamlessly with mobile apps for super easy farm health management. It’s a game-changer especially for the smaller farms, which are often ignored even though they make up a big slice of the market. The agri-IoT scene is growing—expected to shoot up from $11.4 billion to $18.1 billion by 2026—and we’re all set to ride that wave with cheaper solutions than most of the competitors.
+
+## Link to Our App:
+https://brave-flower-0b9c8e71e.5.azurestaticapps.net/
+
+## Link to Youtube Demo Showcase:
+
+
+## Getting Started with previous code
 
 npm install react-scripts
 
-# kick start
+# Kick start on local host
 
+Command for react website: 
+"""
 npm start
+"""
+Command for flask server: (https://github.com/KrantLeeee/515FarmSentinel_FlaskServer)
+Open the terminal and run the following commands:
+"""
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+"""
+"""
+FLASK_DEBUG=1 flask --app app.py run -p 5001
+"""
+
+_remember to change the address in the code to http://127.0.0.1:5001_
 
 ---
 
-# co-work
+# Deployement
+Both the app and the flask server have been deployed on the Azure.
 
-# How to update new feature and send push request
-
-git checkout -b add-new-feature
-
-#
-
-git add .
-git commit -m "Add new feature"
-git push origin add-new-feature
-
-# How to pull and update the latest version to your local
-
-git checkout main
-git pull origin main
-
----
-
-## Available Scripts, originally from react package
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
+# Reflections of What We Learned & Challenges
+### React Basics
+Components
+State management
+Props
+Lifecycle methods
+Event handling
+### React Advanced Topics
+React hooks (useState, useEffect)
+React Router for navigation
+Context API for state management
+### CSS and Styling
+Importing and using CSS in React components
+Inline styling
+Flexbox for layout
+CSS transitions for animations
+### Bootstrap & FontAwesome
+Integrating Bootstrap for styling
+Using Bootstrap classes for layout and design
+Using FontAwesome icons in React
+### APIs and Data Fetching
+Fetching data from APIs using fetch and axios
+Handling asynchronous operations with async/await
+Error handling in API requests
+### Flask Basics
+Setting up a Flask server
+Creating API endpoints with Flask
+Using Flask-CORS for handling Cross-Origin Resource Sharing
+### Azure Integration
+Connecting to Azure Table Storage
+Uploading blobs to Azure Blob Storage
+Using environment variables for sensitive information
+### Chatbot Integration
+Integrating OpenAI’s API with Flask
+Handling chat history for contextual conversations
+Sending and receiving messages between front-end and back-end
+### Project Structure
+Organizing files and directories in a React project
+Maintaining a clean and modular codebase
+### Debugging and Troubleshooting
+Using browser console for debugging
+Handling common errors and warnings in React
 ### Deployment
+Deploying Flask server on local and cloud environments
+Handling mixed content issues with HTTPS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Challenges
+We faced a lot of challenges. These included understanding and implementing the integration of React and Flask, handling cross-domain request issues, configuring and debugging Azure services, adjusting CSS and component layout, ensuring the correctness of API communication, and implementing a chatbot with memory. You also need to master the use of external libraries (such as FontAwesome), handle asynchronous data requests, and solve collaboration issues between the front-end and back-end. Keywords: React, Flask, Azure, cross-domain requests, CSS layout, API communication, chatbot, asynchronous data requests, front-end and back-end collaboration.

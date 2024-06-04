@@ -2,14 +2,14 @@ export const fetchData = async (startDate, endDate) => {
   console.log('Fetching data for dates:', startDate, endDate);
   const response = await fetch(`https://farmsentinelflask.azurewebsites.net/api/data?start_date=${startDate.toISOString()}&end_date=${endDate.toISOString()}`);
   const data = await response.json();
-  console.log('Fetched data:', data); // 添加日志
+  console.log('Fetched data:', data);
   return data.map(item => ({
     Description: item.Description,
     ImageUrl: item.ImageUrl,
     Timestamp: item.Timestamp,
     TS: item.TS,
     Weevil_number: item.Weevil_number,
-    rowKey: item.rowKey  // 确认字段名称
+    rowKey: item.rowKey
   }));
 };
 
@@ -43,6 +43,24 @@ export const updateWeevilNumber = async (rowKey, newWeevilNumber) => {
     return data;
   } catch (error) {
     console.error('Error updating weevil number:', error);
+    throw error;
+  }
+};
+
+export const sendMessageToChatbot = async (messages) => {
+  try {
+    const response = await fetch('https://farmsentinelflask.azurewebsites.net/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ messages })
+    });
+    const data = await response.json();
+    console.log('Chatbot response:', data);
+    return data.message;
+  } catch (error) {
+    console.error('Error sending message to chatbot:', error);
     throw error;
   }
 };

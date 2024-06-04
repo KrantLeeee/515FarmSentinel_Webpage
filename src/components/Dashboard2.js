@@ -81,11 +81,11 @@ function Dashboard2() {
     <div className="dashboard-container">
       <header className="header fixed-top"> {/* Apply fixed position */}
         <div className="d-flex align-items-center">
-          <img src={require('../assets/images/microsoft.png')} alt="Row 4" className="logo" />
+          < img src={require('../assets/images/microsoft.png')} alt="Row 4" className="logo" />
           <span className="font-bold text-lg ml-2 text-white" >Farmbeats</span>
         </div>
         <div className="logo-container">
-          <img src={require('../assets/images/logo.jpg')} alt="Logo" className="logo" />
+          < img src={require('../assets/images/logo.jpg')} alt="Logo" className="logo" />
             <h1 className="text-green-700 text-3xl font-bold text-white">Sentinel</h1>
         </div>
         <div className="icon-white d-flex align-items-center">
@@ -113,7 +113,8 @@ function Dashboard2() {
               <section className="dashboard-section-picture">
                 <div>
                   <div className="dashboard-svh d-flex justify-content-between">
-                    <div className="date-selector">
+                  <div class="parent-container">
+                  <div className="date-selector">
                       <button>&lt;</button>
                       <DatePicker 
                         selected={startDate} 
@@ -135,7 +136,7 @@ function Dashboard2() {
                       ) : (
                         data.map((item, index) => (
                           <div key={index} className="picture">
-                            <img src={item.ImageUrl} alt={`Row ${index + 1}`} className="testimage" />
+                            < img src={item.ImageUrl} alt={`Row ${index + 1}`} className="testimage" />
                             <div className="picture-info">
                               <div className="picture-time">Capture time: {new Date(item.Timestamp).toLocaleString()}</div>
                               <div className="peaewevil-num">
@@ -151,6 +152,7 @@ function Dashboard2() {
                         ))
                       )}
                     </div>
+                  </div>
                   </div>
                 </div>
               </section>

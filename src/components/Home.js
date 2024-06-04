@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCamera, faEnvelope, faBell, faCog, faMoon, faSignOutAlt, faChevronRight, faPlus, faUserCircle, faRobot } from '@fortawesome/free-solid-svg-icons';
 import PeaweevilDetection from './PeaweevilDetection';
-import { getChatCompletion } from '../api/openai';
 import { Link } from 'react-router-dom';
+import { sendMessageToChatbot } from '../api/azure';  // Import the function
 import './Home.css';  // Ensure Home.css is imported
 
 const Home = () => {
@@ -32,7 +32,8 @@ const Home = () => {
   const sendMessage = async () => {
     if (input.trim()) {
       const userMessage = { role: 'user', content: input.trim() };
-      setMessages([...messages, userMessage]);
+      const updatedMessages = [...messages, userMessage];
+      setMessages(updatedMessages);
       setInput('');
       setLoading(true); // Start loading
       setError(null); // Clear previous errors
@@ -40,9 +41,9 @@ const Home = () => {
       console.log('Sending message:', input.trim()); // Log the message being sent
 
       try {
-        const botResponse = await getChatCompletion(input.trim());
+        const botResponse = await sendMessageToChatbot(updatedMessages);
         console.log('Received bot response:', botResponse); // Log the response from the bot
-        const botMessage = { role: 'assistant', content: botResponse.choices[0].text }; // Ensure to access the right property
+        const botMessage = { role: 'assistant', content: botResponse }; // Ensure to access the right property
         setMessages((prevMessages) => [...prevMessages, botMessage]);
         setLoading(false); // Stop loading
       } catch (error) {
@@ -69,11 +70,11 @@ const Home = () => {
     <div className="dashboard-container">
       <header className="header fixed-top"> {/* Apply fixed position */}
         <div className="d-flex align-items-center">
-          <img src={require('../assets/images/microsoft.png')} alt="Row 4" className="logo" />
+          < img src={require('../assets/images/microsoft.png')} alt="Row 4" className="logo" />
           <span className="font-bold text-lg ml-2 text-white">Farmbeats</span>
         </div>
         <div className="logo-container">
-          <img src={require('../assets/images/logo.jpg')} alt="Logo" className="logo" />
+          < img src={require('../assets/images/logo.jpg')} alt="Logo" className="logo" />
           <h1 className="text-green-700 text-3xl font-bold text-white">Sentinel</h1>
         </div>
         <div className="icon-white d-flex align-items-center">
@@ -142,7 +143,7 @@ const Home = () => {
                       <div className="alert-circle"></div>
                       <div className="ml-3">
                         <h4 className="font-bold">{alert.message}</h4>
-                        <p className="mb-1"><strong>Timestamp:</strong> {alert.timestamp}</p>
+                        <p className="mb-1"><strong>Timestamp:</strong> {alert.timestamp}</p >
                       </div>
                     </div>
                     <input
