@@ -47,49 +47,49 @@ Both the app and the flask server have been deployed on the Azure.
 
 # Reflections of What We Learned & Challenges
 ### React Basics
-Components
-State management
-Props
-Lifecycle methods
-Event handling
+1. Components
+2. State management
+3. Props
+4. Lifecycle methods
+5. Event handling
 ### React Advanced Topics
-React hooks (useState, useEffect)
-React Router for navigation
-Context API for state management
+1. React hooks (useState, useEffect)
+2. React Router for navigation
+3. Context API for state management
 ### CSS and Styling
-Importing and using CSS in React components
-Inline styling
-Flexbox for layout
-CSS transitions for animations
+1. Importing and using CSS in React components
+2. Inline styling
+3. Flexbox for layout
+4. CSS transitions for animations
 ### Bootstrap & FontAwesome
-Integrating Bootstrap for styling
-Using Bootstrap classes for layout and design
-Using FontAwesome icons in React
+1. Integrating Bootstrap for styling
+2. Using Bootstrap classes for layout and design
+3. Using FontAwesome icons in React
 ### APIs and Data Fetching
-Fetching data from APIs using fetch and axios
-Handling asynchronous operations with async/await
-Error handling in API requests
+1. Fetching data from APIs using fetch and axios
+2. Handling asynchronous operations with async/await
+3. Error handling in API requests
 ### Flask Basics
-Setting up a Flask server
-Creating API endpoints with Flask
-Using Flask-CORS for handling Cross-Origin Resource Sharing
+1. Setting up a Flask server
+2. Creating API endpoints with Flask
+3. Using Flask-CORS for handling Cross-Origin Resource Sharing
 ### Azure Integration
-Connecting to Azure Table Storage
-Uploading blobs to Azure Blob Storage
-Using environment variables for sensitive information
+1. Connecting to Azure Table Storage
+2. Uploading blobs to Azure Blob Storage
+3. Using environment variables for sensitive information
 ### Chatbot Integration
-Integrating OpenAI’s API with Flask
-Handling chat history for contextual conversations
-Sending and receiving messages between front-end and back-end
+1. Integrating OpenAI’s API with Flask
+2. Handling chat history for contextual conversations
+3. Sending and receiving messages between front-end and back-end
 ### Project Structure
-Organizing files and directories in a React project
-Maintaining a clean and modular codebase
+1. Organizing files and directories in a React project
+2. Maintaining a clean and modular codebase
 ### Debugging and Troubleshooting
-Using browser console for debugging
-Handling common errors and warnings in React
+1. Using browser console for debugging
+2. Handling common errors and warnings in React
 ### Deployment
-Deploying Flask server on local and cloud environments
-Handling mixed content issues with HTTPS
+1. Deploying Flask server on local and cloud environments
+2. Handling mixed content issues with HTTPS
 
 ### Challenges
 We faced a lot of challenges. These included understanding and implementing the integration of React and Flask, handling cross-domain request issues, configuring and debugging Azure services, adjusting CSS and component layout, ensuring the correctness of API communication, and implementing a chatbot with memory. You also need to master the use of external libraries (such as FontAwesome), handle asynchronous data requests, and solve collaboration issues between the front-end and back-end. Keywords: React, Flask, Azure, cross-domain requests, CSS layout, API communication, chatbot, asynchronous data requests, front-end and back-end collaboration.
