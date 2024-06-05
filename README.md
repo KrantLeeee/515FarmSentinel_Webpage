@@ -93,3 +93,5 @@ Both the app and the flask server have been deployed on the Azure.
 
 ### Challenges
 We faced a lot of challenges. These included understanding and implementing the integration of React and Flask, handling cross-domain request issues, configuring and debugging Azure services, adjusting CSS and component layout, ensuring the correctness of API communication, and implementing a chatbot with memory. You also need to master the use of external libraries (such as FontAwesome), handle asynchronous data requests, and solve collaboration issues between the front-end and back-end. Keywords: React, Flask, Azure, cross-domain requests, CSS layout, API communication, chatbot, asynchronous data requests, front-end and back-end collaboration.
+
+Special thanks for Ian Chen. We cannot learn so quickly and finish building this app without Ian's help.
