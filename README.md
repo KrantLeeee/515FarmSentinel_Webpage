@@ -24,19 +24,19 @@ npm install react-scripts
 # Kick start on local host
 
 Command for react website: 
-"""
+```
 npm start
-"""
+```
 Command for flask server: (https://github.com/KrantLeeee/515FarmSentinel_FlaskServer)
 Open the terminal and run the following commands:
-"""
+```
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-"""
-"""
+```
+```
 FLASK_DEBUG=1 flask --app app.py run -p 5001
-"""
+```
 
 _remember to change the address in the code to http://127.0.0.1:5001_
 
